@@ -32,7 +32,7 @@
 
 (defun intero/init-intero ()
   (use-package intero
-    :init
+    :config
     (progn
       (evil-leader/set-key-for-mode 'intero-mode "ml" 'intero-repl-load))
     ))
