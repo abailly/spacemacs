@@ -34,7 +34,15 @@
   (use-package intero
     :config
     (progn
-      (evil-leader/set-key-for-mode 'intero-mode "ml" 'intero-repl-load))
+      ;; provide SPC-m bindings for common intero commands
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "l" 'intero-repl-load)
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "t" 'intero-type-at)
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "b" 'pop-tag-mark)
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "i" 'intero-info)
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "u" 'intero-uses-at)
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "R" 'intero-restart)
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "T" 'intero-targets)
+      (spacemacs/set-leader-keys-for-minor-mode 'intero-mode "d" 'intero-goto-definition))
     ))
 
 (defun intero/post-init-intero ()
